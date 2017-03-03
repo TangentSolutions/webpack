@@ -7,8 +7,13 @@ import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#router}}
 import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/router}}
+import ElementUI from 'element-ui'
+
+import 'element-ui/lib/theme-default/index.css'
 
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+
+Vue.use(ElementUI)
 
 /* eslint-disable no-new */
 new Vue({

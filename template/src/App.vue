@@ -1,25 +1,31 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    {{#router}}
-    <router-view></router-view>
-    {{else}}
-    <hello></hello>
-    {{/router}}
+    <el-row>
+      <el-col :span="24">
+      <app-header></app-header>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="8">
+        <!-- should be: <side-nav :items='..' ></side-nav> -->
+        <side-nav></side-nav>
+      </el-col>
+      <el-col :span="16">
+        <img src="./assets/logo.png">
+        <router-view></router-view>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
-{{#unless router}}
-import Hello from './components/Hello'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import AppHeader from './components/pages/AppHeader'
+import SideNav from './components/pages/SideNav'
 
-{{/unless}}
 export default {
-  name: 'app'{{#router}}{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{else}},
-  components: {
-    Hello{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/router}}
-}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+  name: 'app',
+  components: { AppHeader, SideNav }
+}
 </script>
 
 <style>
