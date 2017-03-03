@@ -2,6 +2,12 @@
 
 > {{ description }}
 
+## Get started
+
+```
+vue init TangentSolutions/webpack-vue-desktop-app {projectname}
+```
+
 ## Build Setup
 
 ``` bash
